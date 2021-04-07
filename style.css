@@ -30,7 +30,7 @@
 }
 
 .figure, .set {
-    background-color: #1e488c;
+    background-color: royalblue;
 }
 
 input {
@@ -45,6 +45,8 @@ input {
     position: absolute;
     top: 200px;
     right: 200px;
+    border: 1px solid navajowhite;
+    color: palegoldenrod;
 }
 
 .modal {
