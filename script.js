@@ -268,7 +268,6 @@ let lives = document.getElementById('lives')
 lives.value = `Lives: ${live}`
 let downKey = false
 let gameover = false
-let next = false
 let game
 let t
 
@@ -310,7 +309,6 @@ function move() {
             return
         }
         gameover = false
-        next = true
     }
     now = Date.now()
 
@@ -404,7 +402,7 @@ let fpsInterval, now, elapsed
 let then = Date.now()
 let lastTime = Date.now()
 
-
+let startGame = false
 let flag = true
 let pause = false
 
@@ -476,7 +474,7 @@ window.addEventListener('keydown', function (e) {
             }
         }
 
-    } else if (e.code === 'Space') {
+    } else if (e.code === 'Space' && startGame) {
         pause = true
         clearInterval(t)
         cancelAnimationFrame(game)
@@ -489,7 +487,8 @@ window.addEventListener('keydown', function (e) {
         document.getElementById('pause').style.display = "none"
         startTimer(display);
         move()
-    } else if (e.code === "KeyF") {
+    } else if (e.code === "KeyS") {
+        startGame = true
         document.getElementsByClassName('pause')[1].style.display = "none"
         display = document.querySelector('#timer');
         startTimer(display);
