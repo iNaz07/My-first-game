@@ -43,8 +43,8 @@ input {
 .controls {
     padding: 20px;
     position: absolute;
-    top: 200px;
-    right: 200px;
+    top: 100px;
+    right: 100px;
     border: 1px solid navajowhite;
     color: palegoldenrod;
 }
@@ -91,3 +91,15 @@ input {
     background-color: #1e488c;
 }
 
+.pause {
+    background-color: darkred;
+    display: none;
+    border: 1px solid rebeccapurple; 
+    position: absolute; 
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  
+}

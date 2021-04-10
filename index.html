@@ -9,17 +9,35 @@
     </head>
     <body style="background-color:slategray;">
         <div class="main">
+            <div class="pause" id="pause">
+            <p style="text-align: center;">Pause menu</p>
+           
+             <form action="">
+            
+               <input type="submit" value="Continue"><br>
+         
+             </form> 
+             <form action="">
+          
+               <input type="submit" value="Restart"><br>
+             </form> 
 
+             
+        </div>
+        <div class="pause" style="display:block">Press F to start</div>
         </div>
         
-        <input type="text" readonly>
+        <!-- <div>
+             <input id="score" type="text" readonly>
+        </div> -->
+       
 
         <div class="controls">
-            <h2 style="text-align: center;">Control</h2>
-            <p>Turn right - right key</p>
-            <p>Turn left - left key</p>
-            <p>Speed up - down key</p>
-            <p>Turn figure - up key</p>
+            <h2 style="text-align: center;">Score board</h2>
+            <input id="timer" type="text" readonly>
+            <input id="score" type="text" readonly>
+            <input id="lives" type="text" readonly>
+            
         </div>
 
         <script src="script.js"></script>
