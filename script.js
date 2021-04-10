@@ -259,12 +259,11 @@ create()
 let score = 0
 let s = 0
 let m = 0
-let h = 0
 let live = 3
 let input = document.getElementById('score')
-input.value = `Your score: ${score}`
+input.value = `Score: ${score}`
 let timer = document.getElementById('timer')
-
+timer.value = "Time: 00:00"
 let lives = document.getElementById('lives')
 lives.value = `Lives: ${live}`
 let downKey = false
@@ -278,20 +277,16 @@ function startTimer(display) {
     t = setInterval(function () {
         s++
 
-        if (s === 6) {
+        if (s === 60) {
             m++
             m = m < 10 ? "0" + m : m
             s = 0
-        }
-        if (m === 60) {
-            h++
-            m = 0
         }
         s = s < 10 ? "0" + s : s
         if (m === 0) {
             display.value = "Time: 00:" + s
         } else {
-            display.value = "Time:" + m + ":" + s
+            display.value = "Time: " + m + ":" + s
         }
 
     }, 1000);
@@ -364,7 +359,7 @@ function move() {
                         count++
                         if (count == 10) {
                             score += 10
-                            input.value = `Your score: ${score}`
+                            input.value = `Score: ${score}`
                             for (let m = 1; m < 11; m++) {
                                 document.querySelector(`[posX = "${m}"][posY = "${i}"]`).classList.remove('set')
                             }
@@ -487,7 +482,7 @@ window.addEventListener('keydown', function (e) {
         cancelAnimationFrame(game)
         document.getElementById('pause').style.display = "block"
     } else if (e.code === 'KeyR' && (pause || gameover)) {
-        timer.value = `Your time: 0:0:0`
+        timer.value = "Time: 00:00"
         location.reload()
     } else if (e.code === 'KeyC') {
         pause = false

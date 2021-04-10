@@ -7,37 +7,36 @@
         <title>TETRIS</title> 
         <link rel="stylesheet" href="style.css">
     </head>
-    <body style="background-color:slategray;">
+    <body style="background-color: gray;">
+            <div class="control">
+            <h2>Control board</h2>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+              </svg>  move right</p>  
+              <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+              </svg> move left</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+              </svg> rotate</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+              </svg> speed up</p>
+            <p><b style="background-color: white; color: black; padding: 5px; border: 1px; border-radius: 5px;">Space</b> pause</p>
+        </div>
         <div class="main">
-            <div class="pause" id="pause">
-            <p style="text-align: center;">Pause menu</p>
-           
-             <form action="">
-            
-               <input type="submit" value="Continue"><br>
-         
-             </form> 
-             <form action="">
-          
-               <input type="submit" value="Restart"><br>
-             </form> 
-
-             
+            <div class="pause layer" id="pause">
+            <p class="layer" style="border: none; color: palegoldenrod;"><b>PAUSE MENU</b></p>          
+               <input type="submit" value="Press C to continue">
+               <input type="submit" value="Press R to restart">
+            </div>
+        <div class="pause layer" id="start"><b>Press F to start</b></div>
         </div>
-        <div class="pause" style="display:block">Press F to start</div>
-        </div>
-        
-        <!-- <div>
-             <input id="score" type="text" readonly>
-        </div> -->
-       
-
         <div class="controls">
             <h2 style="text-align: center;">Score board</h2>
             <input id="timer" type="text" readonly>
             <input id="score" type="text" readonly>
-            <input id="lives" type="text" readonly>
-            
+            <input id="lives" type="text" readonly><br>
         </div>
 
         <script src="script.js"></script>
