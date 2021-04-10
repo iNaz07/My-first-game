@@ -1,8 +1,8 @@
 function createBoard() {
-        let tetris = document.createElement('div')
+    let tetris = document.createElement('div')
     tetris.classList.add('tetris')
 
-    for (let i=1; i < 181; i++) {
+    for (let i = 1; i < 181; i++) {
         let excel = document.createElement('div')
         excel.classList.add('excel')
         tetris.appendChild(excel)
@@ -15,7 +15,7 @@ function createBoard() {
     let i = 0
 
     for (let y = 18; y > 0; y--) {
-        for (let x = 1; x < 11; x++) {  
+        for (let x = 1; x < 11; x++) {
             excel[i].setAttribute('posX', x)
             excel[i].setAttribute('posY', y)
             i++
@@ -24,23 +24,228 @@ function createBoard() {
 }
 
 createBoard()
-let x = 5, y = 15
+let x = 5,
+    y = 15
 
-let mainArr=[[[0,1],[0,2],[0,3],[[-1,1],[0,0],[1,-1],[2,-2]],[[1,-1],[0,0],[-1,1],[-2,2]],[[-1,1],[0,0],[1,-1],[2,-2]],[[1,-1],[0,0],[-1,1],[-2,2]],],[[1,0],[0,1],[1,1],[[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0]],[[0,0],[0,0],[0,0],[0,0]],],[[1,0],[0,1],[0,2],[[0,0],[-1,1],[1,0],[2,-1]],[[1,-1],[1,-1],[-1,0],[-1,0]],[[-1,0],[0,-1],[2,-2],[1,-1]],[[0,-1],[0,-1],[-2,0],[-2,0]],],[[1,0],[1,1],[1,2],[[0,0],[0,0],[1,-1],[-1,-1]],[[0,-1],[-1,0],[-2,1],[1,0]],[[2,0],[0,0],[1,-1],[1,-1]],[[-2,0],[1,-1],[0,0],[-1,1]],],[[1,0],[-1,1],[0,1],[[0,-1],[-1,0],[2,-1],[1,0]],[[0,0],[1,-1],[-2,0],[-1,-1]],[[0,-1],[-1,0],[2,-1],[1,0]],[[0,0],[1,-1],[-2,0],[-1,-1]],],[[1,0],[1,1],[2,1],[[2,-1],[0,0],[1,-1],[-1,0]],[[-2,1],[0,0],[-1,1],[1,0]],[[2,-1],[0,0],[1,-1],[-1,0]],[[-2,1],[0,0],[-1,1],[1,0]],],[[1,0],[2,0],[1,1],[[1,-1],[0,0],[0,0],[0,0]],[[0,0],[-1,0],[-1,0],[1,-1]],[[1,-1],[1,-1],[1,-1],[0,0]],[[-2,0],[0,-1],[0,-1],[-1,-1]],]]
+let mainArr = [
+    [
+        [0, 1],
+        [0, 2],
+        [0, 3],
+        [
+            [-1, 1],
+            [0, 0],
+            [1, -1],
+            [2, -2]
+        ],
+        [
+            [1, -1],
+            [0, 0],
+            [-1, 1],
+            [-2, 2]
+        ],
+        [
+            [-1, 1],
+            [0, 0],
+            [1, -1],
+            [2, -2]
+        ],
+        [
+            [1, -1],
+            [0, 0],
+            [-1, 1],
+            [-2, 2]
+        ],
+    ],
+    [
+        [1, 0],
+        [0, 1],
+        [1, 1],
+        [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ],
+        [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ],
+        [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ],
+        [
+            [0, 0],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ],
+    ],
+    [
+        [1, 0],
+        [0, 1],
+        [0, 2],
+        [
+            [0, 0],
+            [-1, 1],
+            [1, 0],
+            [2, -1]
+        ],
+        [
+            [1, -1],
+            [1, -1],
+            [-1, 0],
+            [-1, 0]
+        ],
+        [
+            [-1, 0],
+            [0, -1],
+            [2, -2],
+            [1, -1]
+        ],
+        [
+            [0, -1],
+            [0, -1],
+            [-2, 0],
+            [-2, 0]
+        ],
+    ],
+    [
+        [1, 0],
+        [1, 1],
+        [1, 2],
+        [
+            [0, 0],
+            [0, 0],
+            [1, -1],
+            [-1, -1]
+        ],
+        [
+            [0, -1],
+            [-1, 0],
+            [-2, 1],
+            [1, 0]
+        ],
+        [
+            [2, 0],
+            [0, 0],
+            [1, -1],
+            [1, -1]
+        ],
+        [
+            [-2, 0],
+            [1, -1],
+            [0, 0],
+            [-1, 1]
+        ],
+    ],
+    [
+        [1, 0],
+        [-1, 1],
+        [0, 1],
+        [
+            [0, -1],
+            [-1, 0],
+            [2, -1],
+            [1, 0]
+        ],
+        [
+            [0, 0],
+            [1, -1],
+            [-2, 0],
+            [-1, -1]
+        ],
+        [
+            [0, -1],
+            [-1, 0],
+            [2, -1],
+            [1, 0]
+        ],
+        [
+            [0, 0],
+            [1, -1],
+            [-2, 0],
+            [-1, -1]
+        ],
+    ],
+    [
+        [1, 0],
+        [1, 1],
+        [2, 1],
+        [
+            [2, -1],
+            [0, 0],
+            [1, -1],
+            [-1, 0]
+        ],
+        [
+            [-2, 1],
+            [0, 0],
+            [-1, 1],
+            [1, 0]
+        ],
+        [
+            [2, -1],
+            [0, 0],
+            [1, -1],
+            [-1, 0]
+        ],
+        [
+            [-2, 1],
+            [0, 0],
+            [-1, 1],
+            [1, 0]
+        ],
+    ],
+    [
+        [1, 0],
+        [2, 0],
+        [1, 1],
+        [
+            [1, -1],
+            [0, 0],
+            [0, 0],
+            [0, 0]
+        ],
+        [
+            [0, 0],
+            [-1, 0],
+            [-1, 0],
+            [1, -1]
+        ],
+        [
+            [1, -1],
+            [1, -1],
+            [1, -1],
+            [0, 0]
+        ],
+        [
+            [-2, 0],
+            [0, -1],
+            [0, -1],
+            [-1, -1]
+        ],
+    ]
+]
 let currentfigure = 0
 let figureBody = 0
 let rotate = 1
 
 function create() {
     function getRandom() {
-        return Math.round(Math.random()*(mainArr.length-1))
+        return Math.round(Math.random() * (mainArr.length - 1))
     }
     rotate = 1
     currentfigure = getRandom()
-    
+
     figureBody = [
         document.querySelector(`[posX = "${x}"][posY = "${y}"]`),
-        document.querySelector(`[posX = "${x + mainArr[currentfigure][0][0]}"][posY = "${y + mainArr[currentfigure][0][1]}"]`), 
+        document.querySelector(`[posX = "${x + mainArr[currentfigure][0][0]}"][posY = "${y + mainArr[currentfigure][0][1]}"]`),
         document.querySelector(`[posX = "${x + mainArr[currentfigure][1][0]}"][posY = "${y + mainArr[currentfigure][1][1]}"]`),
         document.querySelector(`[posX = "${x + mainArr[currentfigure][2][0]}"][posY = "${y + mainArr[currentfigure][2][1]}"]`),
     ]
@@ -64,41 +269,41 @@ let lives = document.getElementById('lives')
 lives.value = `Lives: ${live}`
 let downKey = false
 let gameover = false
-let next = false 
+let next = false
 let game
 let t
 
 function startTimer(display) {
 
-    t = setInterval(function() {
+    t = setInterval(function () {
         s++
-        
+
         if (s === 6) {
             m++
-            m = m < 10 ? "0"+m : m
+            m = m < 10 ? "0" + m : m
             s = 0
         }
         if (m === 60) {
             h++
             m = 0
         }
-        s = s < 10 ? "0"+s : s
+        s = s < 10 ? "0" + s : s
         if (m === 0) {
             display.value = "Time: 00:" + s
         } else {
             display.value = "Time:" + m + ":" + s
         }
-        
-     }, 1000);
-  
+
+    }, 1000);
+
 }
 
 
 function move() {
     if (downKey) {
-        fpsInterval = 1000/10
+        fpsInterval = 1000 / 10
     } else {
-        fpsInterval = 1000/2
+        fpsInterval = 1000 / 2
     }
     if (gameover) {
         live--
@@ -113,13 +318,13 @@ function move() {
         next = true
     }
     now = Date.now()
-    
+
     elapsed = now - then
-      
+
     if (elapsed > fpsInterval) {
-     
-      then = now - (elapsed%fpsInterval)
-        
+
+        then = now - (elapsed % fpsInterval)
+
         let moveFlag = true
         let coordinates = [
             [figureBody[0].getAttribute('posX'), figureBody[0].getAttribute('posY')],
@@ -127,7 +332,7 @@ function move() {
             [figureBody[2].getAttribute('posX'), figureBody[2].getAttribute('posY')],
             [figureBody[3].getAttribute('posX'), figureBody[3].getAttribute('posY')]
         ]
-        for (let i=0; i<coordinates.length; i++) {
+        for (let i = 0; i < coordinates.length; i++) {
             if (coordinates[i][1] == 1 || document.querySelector(`[posX = "${coordinates[i][0]}"][posY = "${coordinates[i][1]-1}"]`).classList.contains('set')) {
                 moveFlag = false
                 downKey = false
@@ -142,7 +347,7 @@ function move() {
                 document.querySelector(`[posX = "${coordinates[0][0]}"][posY = "${coordinates[0][1]-1}"]`),
                 document.querySelector(`[posX = "${coordinates[1][0]}"][posY = "${coordinates[1][1]-1}"]`),
                 document.querySelector(`[posX = "${coordinates[2][0]}"][posY = "${coordinates[2][1]-1}"]`),
-                document.querySelector(`[posX = "${coordinates[3][0]}"][posY = "${coordinates[3][1]-1}"]`) 
+                document.querySelector(`[posX = "${coordinates[3][0]}"][posY = "${coordinates[3][1]-1}"]`)
             ]
             for (let i = 0; i < figureBody.length; i++) {
                 figureBody[i].classList.add('figure')
@@ -152,15 +357,15 @@ function move() {
                 figureBody[i].classList.remove('figure')
                 figureBody[i].classList.add('set')
             }
-            for (let i=1; i < 15; i++) {
+            for (let i = 1; i < 15; i++) {
                 let count = 0
-                for (let key=1; key < 11; key++) {
+                for (let key = 1; key < 11; key++) {
                     if (document.querySelector(`[posX = "${key}"][posY = "${i}"]`).classList.contains('set')) {
                         count++
-                        if (count == 10)  {
+                        if (count == 10) {
                             score += 10
                             input.value = `Your score: ${score}`
-                            for (let m=1; m <11; m++) {
+                            for (let m = 1; m < 11; m++) {
                                 document.querySelector(`[posX = "${m}"][posY = "${i}"]`).classList.remove('set')
                             }
                             let set = document.querySelectorAll('.set')
@@ -178,21 +383,21 @@ function move() {
                             i--
                         }
                     }
-                    for (let n=1; n<11; n++) {
-                        if (document.querySelector(`[posX = "${n}"][posY = "15"]`).classList.contains('set')) {                           
-                            gameover = true                          
+                    for (let n = 1; n < 11; n++) {
+                        if (document.querySelector(`[posX = "${n}"][posY = "15"]`).classList.contains('set')) {
+                            gameover = true
                             cancelAnimationFrame(game)
                             let elem = document.getElementsByClassName('tetris')[0]
                             elem.parentNode.removeChild(elem);
                             createBoard()
-                            break                       
-                        }                                               
+                            break
+                        }
                     }
                 }
-               create() 
-                      
+                create()
+
             }
-            
+
         }
 
     }
@@ -214,27 +419,27 @@ window.addEventListener('keydown', function (e) {
     let coordinates3 = [figureBody[2].getAttribute('posX'), figureBody[2].getAttribute('posY')]
     let coordinates4 = [figureBody[3].getAttribute('posX'), figureBody[3].getAttribute('posY')]
 
-    function getNewState(a) {        
+    function getNewState(a) {
         flag = true
 
         let figureNew = [
             document.querySelector(`[posX = "${+coordinates1[0] + a}"][posY = "${coordinates1[1]}"]`),
             document.querySelector(`[posX = "${+coordinates2[0] + a}"][posY = "${coordinates2[1]}"]`),
             document.querySelector(`[posX = "${+coordinates3[0] + a}"][posY = "${coordinates3[1]}"]`),
-            document.querySelector(`[posX = "${+coordinates4[0] + a}"][posY = "${coordinates4[1]}"]`) 
+            document.querySelector(`[posX = "${+coordinates4[0] + a}"][posY = "${coordinates4[1]}"]`)
         ]
         for (let i = 0; i < figureNew.length; i++) {
             if (!figureNew[i] || figureNew[i].classList.contains('set')) {
-                flag = false                
+                flag = false
             }
         }
         if (flag) {
-            for (let i = 0; i<figureBody.length; i++) {
+            for (let i = 0; i < figureBody.length; i++) {
                 figureBody[i].classList.remove('figure')
             }
             figureBody = figureNew
 
-            for (let i = 0; i<figureBody.length; i++) {
+            for (let i = 0; i < figureBody.length; i++) {
                 figureBody[i].classList.add('figure')
             }
         }
@@ -248,52 +453,51 @@ window.addEventListener('keydown', function (e) {
         downKey = true
     } else if (e.code === 'ArrowUp' && !pause) {
         flag = true
-    
-            let figureNew = [
-                document.querySelector(`[posX = "${+coordinates1[0] + mainArr[currentfigure][rotate+2][0][0]}"][posY = "${+coordinates1[1] + mainArr[currentfigure][rotate+2][0][1]}"]`),
-                document.querySelector(`[posX = "${+coordinates2[0] + mainArr[currentfigure][rotate+2][1][0]}"][posY = "${+coordinates2[1] + mainArr[currentfigure][rotate+2][1][1]}"]`),
-                document.querySelector(`[posX = "${+coordinates3[0] + mainArr[currentfigure][rotate+2][2][0]}"][posY = "${+coordinates3[1] + mainArr[currentfigure][rotate+2][2][1]}"]`),
-                document.querySelector(`[posX = "${+coordinates4[0] + mainArr[currentfigure][rotate+2][3][0]}"][posY = "${+coordinates4[1] + mainArr[currentfigure][rotate+2][3][1]}"]`) 
-            ]
-            for (let i = 0; i < figureNew.length; i++) {
-                if (!figureNew[i] || figureNew[i].classList.contains('set')) {
-                    flag = false 
-                }
+
+        let figureNew = [
+            document.querySelector(`[posX = "${+coordinates1[0] + mainArr[currentfigure][rotate+2][0][0]}"][posY = "${+coordinates1[1] + mainArr[currentfigure][rotate+2][0][1]}"]`),
+            document.querySelector(`[posX = "${+coordinates2[0] + mainArr[currentfigure][rotate+2][1][0]}"][posY = "${+coordinates2[1] + mainArr[currentfigure][rotate+2][1][1]}"]`),
+            document.querySelector(`[posX = "${+coordinates3[0] + mainArr[currentfigure][rotate+2][2][0]}"][posY = "${+coordinates3[1] + mainArr[currentfigure][rotate+2][2][1]}"]`),
+            document.querySelector(`[posX = "${+coordinates4[0] + mainArr[currentfigure][rotate+2][3][0]}"][posY = "${+coordinates4[1] + mainArr[currentfigure][rotate+2][3][1]}"]`)
+        ]
+        for (let i = 0; i < figureNew.length; i++) {
+            if (!figureNew[i] || figureNew[i].classList.contains('set')) {
+                flag = false
             }
-            if (flag) {
-                for (let i = 0; i<figureBody.length; i++) {
-                    figureBody[i].classList.remove('figure')
-                }
-                figureBody = figureNew
-    
-                for (let i = 0; i<figureBody.length; i++) {
-                    figureBody[i].classList.add('figure')
-                }
-                if (rotate < 4) {
-                    rotate++
-                } else { 
-                    rotate = 1
-                }
+        }
+        if (flag) {
+            for (let i = 0; i < figureBody.length; i++) {
+                figureBody[i].classList.remove('figure')
             }
-        
+            figureBody = figureNew
+
+            for (let i = 0; i < figureBody.length; i++) {
+                figureBody[i].classList.add('figure')
+            }
+            if (rotate < 4) {
+                rotate++
+            } else {
+                rotate = 1
+            }
+        }
+
     } else if (e.code === 'Space') {
         pause = true
         clearInterval(t)
         cancelAnimationFrame(game)
         document.getElementById('pause').style.display = "block"
-   } else if (e.code === 'KeyR' && (pause || gameover)) {
+    } else if (e.code === 'KeyR' && (pause || gameover)) {
         timer.value = `Your time: 0:0:0`
         location.reload()
     } else if (e.code === 'KeyC') {
         pause = false
         document.getElementById('pause').style.display = "none"
         startTimer(display);
-        move()     
+        move()
     } else if (e.code === "KeyF") {
         document.getElementsByClassName('pause')[1].style.display = "none"
         display = document.querySelector('#timer');
         startTimer(display);
-           move()
+        move()
     }
 })
-
