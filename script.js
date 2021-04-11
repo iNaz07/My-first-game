@@ -487,7 +487,7 @@ window.addEventListener('keydown', function (e) {
         document.getElementById('pause').style.display = "none"
         startTimer(display);
         move()
-    } else if (e.code === "KeyS" && !pause) {
+    } else if (e.code === "KeyS" && !pause && !startGame) {
         startGame = true
         document.getElementsByClassName('pause')[1].style.display = "none"
         display = document.querySelector('#timer');
