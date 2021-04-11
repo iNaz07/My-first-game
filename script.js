@@ -438,13 +438,13 @@ window.addEventListener('keydown', function (e) {
         }
     }
 
-    if (e.code === 'ArrowLeft' && !pause) {
+    if (e.code === 'ArrowLeft' && !pause && startGame) {
         getNewState(-1)
-    } else if (e.code === 'ArrowRight' && !pause) {
+    } else if (e.code === 'ArrowRight' && !pause && startGame) {
         getNewState(1)
-    } else if (e.code === 'ArrowDown' && !pause) {
+    } else if (e.code === 'ArrowDown' && !pause && startGame) {
         downKey = true
-    } else if (e.code === 'ArrowUp' && !pause) {
+    } else if (e.code === 'ArrowUp' && !pause && startGame) {
         flag = true
 
         let figureNew = [
@@ -482,12 +482,12 @@ window.addEventListener('keydown', function (e) {
     } else if (e.code === 'KeyR' && (pause || gameover)) {
         timer.value = "Time: 00:00"
         location.reload()
-    } else if (e.code === 'KeyC') {
+    } else if (e.code === 'KeyC' && pause) {
         pause = false
         document.getElementById('pause').style.display = "none"
         startTimer(display);
         move()
-    } else if (e.code === "KeyS") {
+    } else if (e.code === "KeyS" && !pause) {
         startGame = true
         document.getElementsByClassName('pause')[1].style.display = "none"
         display = document.querySelector('#timer');
