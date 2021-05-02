@@ -9,8 +9,9 @@ function move() {
         lives.value = `Lives: ${live}`
         if (live === 0) {
             cancelAnimationFrame(game)
-            alert('Game over')
-            location.reload()
+            document.getElementById('player').style.display = "block"
+            clearInterval(t)
+            // location.reload()
             return
         }
         gameover = false
