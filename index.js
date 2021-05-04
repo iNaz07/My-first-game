@@ -90,3 +90,37 @@ window.addEventListener('keydown', function (e) {
         move()
     }
 })
+
+let ScoreBoard = new Object()
+ScoreBoard.username = document.getElementById("1").value
+ScoreBoard.score = input.value
+ScoreBoard.time = timer.value
+
+function Submit() {
+    ScoreBoardData = {
+        username: ScoreBoard.username,
+        score: ScoreBoard.score,
+        time: ScoreBoard.time
+    }
+    let init = {
+        method: 'POST',
+        url: 'localhost:3030'
+    }
+    const obj = JSON.parse(ScoreBoardData)
+    fetch(init, obj).then((e) => {console.log(e.status)})
+    GetScoreBoard()
+}
+
+function GetScoreBoard() {
+    let ScoreBoardTable = []
+    let init = {
+        method: 'GET',
+        url: 'localhost:3030'
+    }
+    fetch(init).then((response) => {
+        return response.json();
+  }).then(data => console.log(data))
+  
+}
+
+ 
