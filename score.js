@@ -1,7 +1,7 @@
 async function addPlayer() {
     
 let player = {
-    Name: document.getElementById("pname"),
+    Name: document.getElementById("pname").value,
     Score: score,
     Time: timer.value.split(' ')[1]
 }
@@ -47,15 +47,15 @@ function createTable(res) {
     document.getElementById("board").style.display = "block"
     let table = document.getElementById("table")
     for (let i = 0; i < 5; i++) {
-        let tr = document.createElement("div")
-        tr.classList.add("row", "result")
-        let td = document.createElement("div")
-        td.classList.add("column", "result")
+        let tr = document.createElement("tr")
+        // tr.classList.add("row", "result")
+        let td = document.createElement("td")
+        // td.classList.add("column", "result")
         td.innerHTML = i+1
         tr.appendChild(td)
         for (const val of Object.values(res[i])) {
-            let td = document.createElement("div")
-            td.classList.add("column", "result")
+            let td = document.createElement("td")
+            // td.classList.add("column", "result")
             td.innerHTML = val
             tr.appendChild(td) 
         }
