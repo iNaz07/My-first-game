@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body style="background-color: gray;">
-            <div class="control">
+            <div class="control left">
             <h2>Control board</h2>
             <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
                 <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
@@ -30,15 +30,26 @@
                <input type="submit" value="Press C to continue">
                <input type="submit" value="Press R to restart">
             </div>
-        <div class="pause layer" id="start"><b>Press S to start</b></div>
-        <div id="player" class="pause layer">
-          <p class="layer">Please enter your name</p>
-          <input type="text" name="player" id="1">
-          <button type="submit" onclick="Submit()">Submit</button>
+            <div class="pause layer" id="start"><b>Press S to start</b></div>
+            <div id="player" class="pause layer">
+              <p class="layer">Please enter your name</p>
+              <input type="text" name="player" id="pname">
+              <button type="submit" onclick="addPlayer()">Submit</button>
+            </div>
+            <div class="board" style="display: none;" id="board">
+              <h2 style="text-align: center;"><b>SCORE BOARD</b></h2>
+              <div id="table">
+                  <div class="row result">
+                      <div class="column result">Rank</div>
+                      <div class="column result">Name</div>
+                      <div class="column result">Score</div>
+                      <div class="column result">Time</div>
+                  </div>
+              </div>    
+            </div>
         </div>
-        </div>
-        <div class="controls">
-            <h2 style="text-align: center;">Score board</h2>
+        <div class="control right">
+            <h2 style="text-align: center;">Your results</h2>
             <input id="timer" type="text" readonly>
             <input id="score" type="text" readonly>
             <input id="lives" type="text" readonly><br>
@@ -47,5 +58,6 @@
         <script src="script.js"></script>
         <script src="move.js"></script>
         <script src="index.js"></script>
+        <script src="score.js"></script>
     </body>
 </html>
