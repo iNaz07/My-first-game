@@ -260,7 +260,7 @@ create()
 let score = 0
 let s = 0
 let m = 0
-let live = 3
+let live = 1
 let input = document.getElementById('score')
 input.value = `Score: ${score}`
 let timer = document.getElementById('timer')

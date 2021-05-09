@@ -38,7 +38,7 @@
             </div>
             <div class="board" style="display: none;" id="board">
               <h2 style="text-align: center;"><b>SCORE BOARD</b></h2>
-              <h4>Congratulations {{}} , you are in the top {{}} , in the {{}} position. </h4>
+              <h4>Congrats <span id="plname"></span> , you are in the top <span id="percent"></span>, in the <span id="rank"></span> position. </h4>
               <table id="table">
                   <tr>
                       <th><b>Rank</b></th>
@@ -47,7 +47,7 @@
                       <th><b>Time</b></th>
                   </tr>
                 </table>
-                <p><button>&#8826-</button>Page 1/50<button>-&#8827</button></p>    
+                <p><button id="back" type="button" onclick="previous()">&#8826-</button>Page 1/50<button id="next" type="button" onclick="next()">-&#8827</button></p>    
             </div>
         </div>
         <div class="control right">
