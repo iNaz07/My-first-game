@@ -82,6 +82,7 @@ function createTable(res, player) {
     }       
 }
 let five = 5
+let pages
 
 function next() {
     if (playerBoard.length >= 6) {
@@ -95,8 +96,6 @@ function next() {
                 console.log("whats here", playerBoard[i])            
                 for (const val of Object.values(playerBoard[five])) {                       
                     let tdata1 = document.querySelectorAll(".tdata1")
-                    console.log("val", val)
-                    console.log("tdata1", tdata1)
                     tdata1[j].innerHTML = val
                     j++
                 } 
@@ -107,8 +106,8 @@ function next() {
                 }
             }
         }
-        console.log("this is s", five) 
-    }   
+    }
+    pages = five   
 }
 
 function previous() {
@@ -116,17 +115,26 @@ function previous() {
         let tdata = document.querySelectorAll(".tdata")
         console.log(tdata)
         let j = 0
-        five -= 10
+        pages -= 10
+        five -= 5
         for (let i = 0; i < 5; i++) {
-            five++
-            tdata[i].innerHTML = five        
-            for (const val of Object.values(playerBoard[i])) {                       
-                let tdata1 = document.querySelectorAll(".tdata1")
-                console.log("val", val)
-                console.log("tdata1", tdata1)
-                tdata1[j].innerHTML = val
-                j++
-            } 
+            pages++
+            tdata[i].innerHTML = pages
+            if (playerBoard[pages] !== undefined) {
+                for (const val of Object.values(playerBoard[pages])) {                       
+                    let tdata1 = document.querySelectorAll(".tdata1")
+                    console.log("val", val)
+                    console.log("tdata1", tdata1)
+                    tdata1[j].innerHTML = val
+                    j++
+                }
+            } else {
+                for (let k = j; k < 15; k++) {
+                    let tdata1 = document.querySelectorAll(".tdata1")
+                    tdata1[k].innerHTML = ''
+                }
+            }      
+             
         }
         console.log("this is s", five) 
     }   
