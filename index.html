@@ -27,8 +27,8 @@
         <div class="main">
             <div class="pause layer" id="pause">
             <p class="layer" style="border: none; color: palegoldenrod;"><b>PAUSE MENU</b></p>          
-               <input type="submit" value="Press C to continue">
-               <input type="submit" value="Press R to restart">
+               <input class="press" type="submit" value="Press C to continue">
+               <input class="press" type="submit" value="Press Shift+Q to restart">
             </div>
             <div class="pause layer" id="start"><b>Press S to start</b></div>
             <div id="player" class="pause layer">
@@ -37,8 +37,8 @@
               <button type="submit" onclick="addPlayer()">Submit</button>
             </div>
             <div class="board" style="display: none;" id="board">
-              <h2 style="text-align: center;"><b>SCORE BOARD</b></h2>
-              <h4>Congrats <span id="plname"></span> , you are in the top <span id="percent"></span>, in the <span id="rank"></span> position. </h4>
+              <h2 class="center"><b>SCORE BOARD</b></h2>
+              <h4 id="head" class="center">Congrats <span id="plname"></span> , you are in the top <span id="percent"></span>, in the <span id="rank"></span> position. </h4>
               <table id="table">
                   <tr>
                       <th><b>Rank</b></th>
@@ -47,14 +47,16 @@
                       <th><b>Time</b></th>
                   </tr>
                 </table>
-                <p><button id="back" type="button" onclick="previous()">&#8826-</button>Page 1/50<button id="next" type="button" onclick="next()">-&#8827</button></p>    
+                <p class="center"><button id="back" type="button" onclick="previous()">&#8826-</button> Page <span id="current"></span>/<span id="all"></span> <button id="next" type="button" onclick="next()">-&#8827</button></p>
+                <p class="center"><b>Press <span style="border: 1px solid yellowgreen">Shift+Q</span> to restart</b> </p>    
             </div>
         </div>
-        <div class="control right">
-            <h2 style="text-align: center;">Your results</h2>
+        <div class="control center right">
+            <h2 class="center">Your results</h2>
             <input id="timer" type="text" readonly>
             <input id="score" type="text" readonly>
             <input id="lives" type="text" readonly><br>
+            <button type="submit" onclick="allPlayer()">Get scoreboard</button>
         </div>
 
         <script src="script.js"></script>

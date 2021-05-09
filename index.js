@@ -74,7 +74,7 @@ window.addEventListener('keydown', function (e) {
         clearInterval(t)
         cancelAnimationFrame(game)
         document.getElementById('pause').style.display = "block"
-    } else if (e.code === 'KeyR' && (pause || gameover)) {
+    } else if (e.shiftKey && e.code === 'KeyQ' && (pause || gameover)) {
         timer.value = "Time: 00:00"
         location.reload()
     } else if (e.code === 'KeyC' && pause) {

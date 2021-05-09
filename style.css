@@ -115,12 +115,12 @@ input {
     transform: translate(-50%, -50%);
     width: 300px;
     border-radius: 20px;
-  
+    font-size: 14px;
 }
 
 .layer {
     padding: 30px;
-    margin: 30 px;
+    /* margin: 30px; */
     text-align: center;
     color: floralwhite;
     font-size: large;
@@ -141,20 +141,24 @@ input {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: initial;
+    width: 400px;
     border-radius: 10px;
-    padding: 30px;
+    padding: 0 30px;
+
     color: green;   
 }
 
 table, td, th {
     border: 1px solid yellowgreen;
     color: yellowgreen;
+    text-align: center;
 }
 
 table {
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
-    width: 50%; 
+    width: 90%; 
     background-color: black;
 }
 
@@ -163,5 +167,13 @@ th {
 }
 
 td {
-    padding: 20px;
+    padding: 5px;
+}
+
+.center {
+    text-align: center
+}
+
+.press {
+    width: initial;
 }

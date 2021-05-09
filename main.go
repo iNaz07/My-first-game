@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"sort"
+	"os"
 )
 
 type Player struct {
@@ -17,6 +18,15 @@ type Player struct {
 var PlayersBoard []Player
 var filename = "scoreboard.json"
 func readJsonFile() []byte {
+	_, err := os.Stat(filename)
+    if os.IsNotExist(err) {
+		fileName, err := os.Create(filename)
+		if err != nil {
+			log.Fatal(err)
+		}
+		fileName.Close()
+    }
+    
 	content, err := ioutil.ReadFile(filename)
 	if err != nil {
 		log.Fatal(err)
